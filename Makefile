@@ -36,7 +36,7 @@ BIN_WRAPPER=\
 'export PERL5LIB=$(exec_libdir)/perl5\n'\
 'export PATH=$(exec_libexecdir):$$PATH\n'\
 'exec $(exec_libexecdir)/$(1)' '"$$@"'
-INSTALL_WRAPPER = install --directory $(2); echo $(BIN_WRAPPER) | sed 's/^ *//' > $(2)/$(1)
+INSTALL_WRAPPER = install --directory $(DESTDIR)$(2); echo $(BIN_WRAPPER) | sed 's/^ *//' > $(DESTDIR)$(2)/$(1)
 
 build: validate
 	HOME=`pwd`/local carton install --deployment

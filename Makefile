@@ -50,6 +50,7 @@ install: validate
 	@$(call INSTALL,local/bin,$(libexecdir))
 	@$(call INSTALL,local/lib,$(libdir))
 	@$(call INSTALL_WRAPPER,minil,$(bindir))
+	find $(DESTDIR)$(libdir) -type f -print0 | xargs -0 sed -i s,$(carton_staging_dir),$(datarootdir),g
 
 clean:
 	rm --recursive --force local/

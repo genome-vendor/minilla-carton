@@ -10,7 +10,6 @@ prefix ?= /usr
 datarootdir ?= $(prefix)/share/minilla
 datadir ?= $(datarootdir)
 
-sysconfdir ?= $(prefix)/etc
 bindir ?= $(prefix)/bin
 
 libdir ?= $(datadir)/lib
@@ -20,7 +19,6 @@ libexecdir ?= $(datadir)/libexec
 exec_prefix ?= $(prefix)
 exec_datarootdir ?= $(exec_prefix)/share/minilla
 exec_datadir ?= $(exec_datarootdir)
-exec_sysconfdir ?= $(exec_prefix)/etc
 exec_bindir ?= $(exec_prefix)/bin
 exec_libdir ?= $(exec_datadir)/lib
 exec_libexecdir ?= $(exec_datadir)/libexec
@@ -49,7 +47,6 @@ ifneq ($(THIS), Makefile)
 endif
 
 install: validate
-	@$(call INSTALL,local/etc,$(sysconfdir))
 	@$(call INSTALL,local/bin,$(libexecdir))
 	@$(call INSTALL,local/lib,$(libdir))
 	@$(call INSTALL_WRAPPER,minil,$(bindir))

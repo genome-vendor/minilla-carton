@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEB_PACKAGING_DIR = debian/$(shell dh_listpackages)
+STAGING_PREFIX = $(DEB_PACKAGING_DIR)/usr
+SYSCONF_STAGING_DIR = $(DEB_PACKAGING_DIR)/etc
+INSTALLED_PREFIX = /usr
+CARTON_STAGING_DIR = $(shell pwd)/local
+
+%:
+	dh  $@
+
+overrride_dh_auto_build:
+	make build
+
+override_dh_auto_install:
+	deb_staging_dir=$(DEB_PACKAGING_DIR) carton_staging_dir=$(CARTON_STAGING_DIR)  prefix=$(STAGING_PREFIX) sysconfdir=$(SYSCONF_STAGING_DIR) exec_prefix=$(INSTALLED_PREFIX) make install
+	
+override_dh_strip:
+	echo "Do not create a *dbgsym*.ddeb package."

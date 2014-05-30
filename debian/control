@@ -1,0 +1,12 @@
+Source: minilla-carton
+Section: database
+Priority: standard
+Maintainer: Nathaniel Nutter <nnutter@genome.wustl.edu>
+Build-Depends: debhelper (>= 7), carton
+Standards-Version: 3.8.3
+Homepage: https://metacpan.org/release/Minilla
+
+Package: minilla-carton
+Architecture: any
+Depends: perl-modules (>= 5.10.1)
+Description: Authorizing tool for CPAN modules

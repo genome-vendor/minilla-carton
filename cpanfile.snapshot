@@ -628,10 +628,10 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
-  Minilla-v1.0.0
-    pathname: T/TO/TOKUHIROM/Minilla-v1.0.0.tar.gz
+  Minilla-v1.1.0
+    pathname: T/TO/TOKUHIROM/Minilla-v1.1.0.tar.gz
     provides:
-      Minilla 1.000000
+      Minilla 1.001000
       Minilla::CLI undef
       Minilla::CLI::Build undef
       Minilla::CLI::Clean undef
@@ -695,7 +695,7 @@ DISTRIBUTIONS
       Moo 1.001
       Pod::Markdown 1.322
       TAP::Harness::Env 0
-      TOML 0.92
+      TOML 0.94
       Term::ANSIColor 0
       Text::MicroTemplate 0.20
       Time::Piece 1.16

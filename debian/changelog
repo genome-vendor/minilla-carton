@@ -1,3 +1,9 @@
+minilla-carton (1.1.0-0ubuntu0tgi1) lucid; urgency=low
+
+  * Upgrage to Minilla 1.1.0.
+
+ -- Nathaniel Nutter <nnutter@genome.wustl.edu>  Sun, 01 Jun 2014 12:11:50 -0500
+
 minilla-carton (1.0.0-0ubuntu0tgi1) stable; urgency=low
 
   * Initial release.
